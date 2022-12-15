@@ -1,0 +1,17 @@
+.region-select {
+    padding-left: 24px;
+    padding-right: 77px;
+    padding-block: 18px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #111517;
+    appearance: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-image: url("./assets/arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 9px 6px;
+    background-position: right 25px center;
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+    background-color: #fff;
+}

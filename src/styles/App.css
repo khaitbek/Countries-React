@@ -1,0 +1,71 @@
+:root{
+  --ff-main:"Nunito Sans",sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  font-family: var(--ff-main);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button{
+  border: 1px solid transparent;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1150px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* sticky footer */
+.site-main {
+  flex-grow: 1;
+  background-color: #F2F2F2;
+}
+
+.countries{
+  padding-block: 48px;
+}
