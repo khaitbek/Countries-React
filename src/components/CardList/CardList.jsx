@@ -1,20 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
+import uuid from 'react-uuid';
 import "./cards.css";
-import { countries } from '../../data/countries';
-function CardList() {
+
+
+function CardList({countries}) {
   return (
-    
+
     <ul className="card-list">
-        {
-            countries.map(country => {
-              return <Card data={country} />
-            })
-
-
-
-        }
-    </ul>
+      {countries.map(country => (
+        <Card name={country.name.common} capital={country.capital || "No capital city"} img={country.flags.svg} population={country.population} region={country.region} key={uuid()}/>
+      ))}
+    </ul >
   )
 }
 

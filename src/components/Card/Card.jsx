@@ -1,11 +1,9 @@
 import React from 'react';
 import "./card.css";
 
-function Card(data) {
-    console.log(data);
-    const {img,name,population,region, capital,id} = data.data;
+function Card({img,name,population,region, capital}) {
     return (
-        <li className="country-item" key={id}>
+        <li className="country-item">
             <img src={img} alt="" className="country-img" width="267" height="160" />
             <div className="country-inner">
                 <h3 className="country-title">{name}</h3>
