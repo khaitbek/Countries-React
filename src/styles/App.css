@@ -1,4 +1,17 @@
 :root{
+  --clr-black:#111517;
+  --clr-secondary-100:#202C36;
+  --clr-secondary-200:#2B3844;
+  --clr-light:#fff;
+  --clr-light-200:#f2f2f2;
+  --bg-light-100:(--clr-light);
+  --bg-light-200:(--clr-light);
+  --bg-dark-100:var(--clr-secondary-100);
+  --bg-dark-200:var(--clr-secondary-200);
+  --bg-main:var(--bg-light-100);
+  --bg-main-100:var(--bg-light-100);
+  --bg-main-200:var(--clr-light);
+  --text-main:var(--clr-black);
   --ff-main:"Nunito Sans",sans-serif;
 }
 
@@ -62,10 +75,23 @@ button{
 
 /* sticky footer */
 .site-main {
+  min-height: 100vh;
   flex-grow: 1;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
+}
+
+.dark{
+  --bg-main:var(--bg-dark-100);
+  --bg-main-200:var(--bg-dark-200);
+  --text-main:var(--clr-light);
+  background-color: var(--bg-main);
 }
 
 .countries{
   padding-block: 48px;
+}
+
+.site-state{
+  font-size: 3rem;
+  color: var(--text-main);
 }

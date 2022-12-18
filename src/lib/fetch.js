@@ -1,11 +1,15 @@
-export function getFetch(url,params = {}){
-    const queryString = Object.entries(params).map(param => (
-        `${param[0]}=${param[1]}`
-    )).join("&");
-    return fetch(`${url}?${params}`).then(res => res.json());
+export const BASE_API = "https://restcountries.com/v3.1/"
+
+export async function getFetch(url,params = "all"){
+    return await fetch(`${url}${params}`).then(res => res.json());
 }
 
-export function getAllCountries(){
-    const countries = getFetch("https://restcountries.com/v3.1/all");
+export async  function getAllCountries(){
+    const countries = getFetch(BASE_API);
     return countries;
+}
+
+export async function getSingleCountry(country) {
+    const singleCountryData = getFetch(BASE_API,`name/${country}`);
+    return await singleCountryData;
 }

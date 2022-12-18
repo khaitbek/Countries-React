@@ -1,6 +1,15 @@
 .site-header{
     padding-block: 24px;   
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+    background-color: var(--bg-main-200);
+}
+
+.site-header.dark{
+    background-color: var(--bg-main-200);
+}
+
+.site-logo{
+    color: var(--text-main);
 }
 
 .header-wrapper{
@@ -8,3 +17,4 @@
     align-items: center;
     justify-content: space-between;
 }
+

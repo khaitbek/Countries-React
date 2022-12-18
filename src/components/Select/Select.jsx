@@ -1,13 +1,14 @@
 import React from 'react'
 import { filterCountries } from '@lib/filter';
 import "./select.css";
+import { getFetch,BASE_API } from '@lib/fetch';
 const Select = React.forwardRef(({countries,setCountries},ref) => {
-  const selectHandler = evt => {
+  const selectHandler = async (evt) => {
     const currentRegion = ref.current.value;
     const routeToMakeRequest = currentRegion ? `region/${currentRegion}` : "all";
-    filterCountries(routeToMakeRequest).then(filteredCountries => {
-      setCountries(filteredCountries);
-    })
+    const filteredCountries = await getFetch(BASE_API, routeToMakeRequest);
+    setCountries(filteredCountries);
+
   }
   return (
     <select className='region-select' name="user_filter" id="regionFilter" onChange={selectHandler} ref={ref}>

@@ -4,15 +4,15 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
-    color: #111517;
+    color: var(--text-main);
 }
 
 .theme-toggler::before{
     content: "";
     display: block;
-    width: 15px;
+    width: 20px;
     aspect-ratio: 1;
     margin-right: 11px;
     background-image: url("./assets/moon.svg");
-    background-size: 15px;
+    background-size: 20px;
 }
