@@ -15,7 +15,7 @@ const Input = React.forwardRef(({ countries, setCountries, setError }, ref) => {
     })
     return (
         <>
-            <input className="search-input" aria-label="search for countries" id="searchInput" type="search" ref={ref} onChange={inputHandler} placeholder='Search for a country' aria-label='Search for a country' required />
+            <input className="search-input" aria-label="search for countries" id="searchInput" type="search" ref={ref} onChange={inputHandler} placeholder='Search for a country' required />
         </>
     )
 }

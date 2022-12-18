@@ -14,7 +14,7 @@ function CountryItem() {
   const [countryData, setCountryData] = useState([]);
   useMemo(async () => {
     const singleCountry = await getSingleCountry(name);
-    setCountryData(singleCountry);
+    setCountryData([singleCountry[0]]);
   }, []);
 
   return (
@@ -24,13 +24,13 @@ function CountryItem() {
         <div className="container">
           <Link className="page-link" to="/">Back</Link>
           {countryData.map(country => {
-            const { capital, borders, currencies, flags, languages, region, subregion, population, tld } = country;
+            const { capital, borders = [], currencies, flags, languages, region, subregion, population, tld } = country;
             const countryLanguages = Object.entries(languages)[0].join(", ");
             const borderCountries = borders.join(", ");
             const countryCurrency = currencies[Object.keys(currencies)[0]].name;
             const countryName = country.name.common;
             return <div className="country-wrapper" key={uuid()}>
-              <img className="country-img" src={flags.svg} alt={`${countryName}'s flag`} tabIndex={0} className="country-image" />
+              <img className="country-image" src={flags.svg} alt={`${countryName}'s flag`} tabIndex={0}/>
               <div className="country-inner">
                 <h2 className="country-name" tabIndex={0}>{countryName} </h2>
                 <div className="country-info">
