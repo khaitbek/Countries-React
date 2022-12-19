@@ -12,7 +12,7 @@
   --bg-main-100:var(--bg-light-100);
   --bg-main-200:var(--clr-light);
   --text-main:var(--clr-black);
-  --ff-main:"Nunito Sans",sans-serif;
+  --ff-main:sans-serif;
 }
 
 *, *::before, *::after {
