@@ -5,7 +5,7 @@ import "./card.css";
 function Card({ img, name, population, region, capital }) {
     return (
         <li className="country-item" tabIndex={0}>
-            <img src={img} tabIndex={0} alt={`${name}'s flag`} className="country-img" width="267" height="160" />
+            <img src={img} loading='lazy' tabIndex={0} alt={`${name}'s flag`} className="country-img" width="267" height="160" />
             <div className="country-inner">
                 <h3 className="country-title" tabIndex={0}>{name}</h3>
                 <ul className="country-info-list">
