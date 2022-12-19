@@ -1,22 +1,28 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect, useCallback } from 'react'
 import { getAllCountries } from '@/lib/fetch';
 import CardList from '@/components/CardList/CardList';
 import Form from '@components/Form/Form';
 function Home() {
-  const [countries, setCountries] = useState([]);
+  const localCountries = JSON.parse(localStorage.getItem("countries"));
+  const [countries, setCountries] = useState(localCountries || []);
   const [isLoading, setLoading] = useState(true);
   const [isError, setError] = useState(false);
 
-
   useMemo(async () => {
+    if(localCountries) return setLoading(false);
     try {
-      setCountries(await getAllCountries());
+      const data = await getAllCountries();
+      setCountries(data);
     } catch (error) {
       setError(true);
     } finally{
       setLoading(false);
     }
   }, []);
+
+  useEffect(()=>{
+    localStorage.setItem("countries",JSON.stringify(countries));
+  },[countries]);
 
   return (
     <>

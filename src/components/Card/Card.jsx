@@ -9,24 +9,24 @@ function Card({ img, name, population, region, capital }) {
             <div className="country-inner">
                 <h3 className="country-title" tabIndex={0}>{name}</h3>
                 <ul className="country-info-list">
-                    <li className="country-info-item" tabIndex={0} aria-description={`${name}'s population is ${population}`}>
+                    <li className="country-info-item" tabIndex={0} title={`${name}'s population is ${population}`}>
                         Population: <span className="country-special-info">
                             {population}
                         </span>
                     </li>
-                    <li className="country-info-item" tabIndex={0} aria-description={`${name}'s region is ${region}`}>
+                    <li className="country-info-item" tabIndex={0} title={`${name}'s region is ${region}`}>
                         Region: <span className="country-special-info">
                             {region}
                         </span>
                     </li>
-                    <li className="country-info-item" tabIndex={0} aria-description={`${name}'s capital is ${capital}`}>
+                    <li className="country-info-item" tabIndex={0} title={`${name}'s capital is ${capital}`}>
                         Capital: <span className="country-special-info">
                             {capital}
                         </span>
                     </li>
                     <li>
-                        <Link className="country-link" to={`country/${name}`}>
-                            More
+                        <Link className="country-link" title={`See more info about ${name}`} to={`country/${name}`}>
+                            See all info
                         </Link>
                     </li>
                 </ul>

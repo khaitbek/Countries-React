@@ -34,14 +34,14 @@ function CountryItem() {
               <div className="country-inner">
                 <h2 className="country-name" tabIndex={0}>{countryName} </h2>
                 <div className="country-info">
-                  <ul className="country-list country-list--main" tabIndex={0} aria-description={`information about ${countryName}`}>
+                  <ul className="country-list country-list--main" tabIndex={0} title={`information about ${countryName}`}>
                     <Country key={uuid()} country={countryName} prop="Native Name" value={countryName} />
                     <Country key={uuid()} country={countryName} prop="Population" value={population} />
                     <Country key={uuid()} country={countryName} prop="Region" value={region} />
                     <Country key={uuid()} country={countryName} prop="Sub region" value={subregion} />
                     <Country key={uuid()} country={countryName} prop="Capital" value={capital} />
                   </ul>
-                  <ul className="country-list country-list--main" tabIndex={0} aria-description={`information about ${countryName}`}>
+                  <ul className="country-list country-list--main" tabIndex={0} title={`information about ${countryName}`}>
                     <Country key={uuid()} country={countryName} prop="Top Level Domain" value={tld} />
                     <Country key={uuid()} country={countryName} prop="Currencies" value={countryCurrency} />
                     <Country key={uuid()} country={countryName} prop="Languages" value={countryLanguages} />
