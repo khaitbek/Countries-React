@@ -4,8 +4,10 @@ import { filterCountries } from '@lib/filter';
 import { getFetch, getAllCountries } from '@lib/fetch';
 import "./input.css";
 import { BASE_API } from '@lib/fetch';
+import { useTranslation } from 'react-i18next';
 
 const Input = React.forwardRef(({ countries, setCountries, setError }, ref) => {
+    const {t,i18next} = useTranslation();
     const inputHandler = debounce(async (evt) => {
         const inputValue = ref.current.value;
         const routeToMakeRequest = inputValue.trim() ? `name/${inputValue}` : "all"
@@ -17,7 +19,7 @@ const Input = React.forwardRef(({ countries, setCountries, setError }, ref) => {
     })
     return (
         <>
-            <input className="search-input" defaultValue={localStorage.getItem("inputValue")} aria-label="search for countries" id="searchInput" type="search" ref={ref} onChange={inputHandler} placeholder='Search for a country' required />
+            <input className="search-input" defaultValue={localStorage.getItem("inputValue")} aria-label="search for countries" id="searchInput" type="search" ref={ref} onChange={inputHandler} placeholder={t("search")} required />
         </>
     )
 }

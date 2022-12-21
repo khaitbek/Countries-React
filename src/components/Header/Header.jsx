@@ -1,18 +1,28 @@
 import React from 'react'
+import {useTranslation} from "react-i18next";
+import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import Button from '../Button/Button';
 import "./header.css";
 function Header({theme,setTheme}) {
+  const {t,i18n} = useTranslation();
   function themeToggler(){
     setTheme(previousTheme => (
       previousTheme === "light" ? "dark" : "light"
     ))
   }
+  function handleLanguageSelect(evt) {
+    i18n.changeLanguage(evt.target.value);
+  }
   return (
     <header className={theme === "light" ? 'site-header' : 'site-header dark'}>
       <div className="container"> 
         <div className="header-wrapper">
-          <Logo />
+          <Link className='site-logo' to="/">{t("logo")}</Link>
+          <select defaultChecked={i18n.language} onChange={handleLanguageSelect} name="page_language">
+            <option value="uz">{t("uz")}</option>
+            <option value="en">{t("en")}</option>
+          </select>
           <Button className="theme-toggler" aria-label="change theme" onClick={themeToggler} text="Dark Mode" />
         </div>
       </div>
