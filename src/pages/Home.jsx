@@ -23,9 +23,9 @@ function Home() {
     }
   }, []);
 
-  useEffect(()=>{
-    localStorage.setItem("countries",JSON.stringify(countries));
-  },[countries]);
+  // useEffect(()=>{
+  //   localStorage.setItem("countries",JSON.stringify(countries));
+  // },[countries]);
 
   return (
     <>
